@@ -1,0 +1,26 @@
+body {
+	background-color: red;
+}
+.container {
+	width: 80%;
+  margin: 0 auto;
+  background-color: #66ffff;
+}
+ul {
+	list-style: none;
+}
+li {
+	display: inline;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+footer {
+	position: fixed;
+  bottom: 0;
+  width: auto;
+  margin-left: 20px;
+}
