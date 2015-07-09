@@ -1,0 +1,11 @@
+---
+robots:
+- id: 6
+  name: joe
+  city: denver
+  state: Co
+  avatar: yo
+  birthdate: 12/24/1974
+  date_hired: 1/1/2000
+  department: home
+total: 7
