@@ -6,7 +6,11 @@ require_relative 'robot'
 
 class RobotWorld
 	def self.database
-		@database ||= YAML::Store.new("db/robot_world")
+		if ENV["ROBOT_WORLD_ENV"] == 'test'
+			@database ||= YAML::Store.new("db/robot_world_test")
+		else
+			@database ||= YAML::Store.new("db/robot_world")
+		end
 	end
 
 	def self.create(robot)
@@ -118,6 +122,12 @@ class RobotWorld
       end
   end
 	
+	 def self.delete_all
+    database.transaction do
+      database['robots'] = []
+      database['total'] = 0
+    end
+  end
 
 
 

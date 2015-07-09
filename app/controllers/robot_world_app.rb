@@ -1,4 +1,3 @@
-require 'models/robot_world'
 require 'date'
 
 class RobotWorldApp < Sinatra::Base
@@ -47,6 +46,8 @@ class RobotWorldApp < Sinatra::Base
 		RobotWorld.delete(id.to_i)
 		redirect "/robots"
 	end
+
+	
 
 
 end
