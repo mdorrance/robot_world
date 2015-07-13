@@ -1,11 +1,13 @@
-<a href="/robots">Robots Index</a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+	<a href="/robots">Robots Index</a>
 
-<h1><%= @robot.name %></h1>
+	<h1><%= @robot.name %></h1>
 
-<p><%= @robot.city %></p>
-<p><%= @robot.state %></p>
-<img src="
-https://robohash.org/<%= @robot.avatar %>" >
-<p><%= @robot.birthdate %></p>
-<p><%= @robot.date_hired %></p>
-<p><%= @robot.department %></p>
+	<p><%= @robot.city %></p>
+	<p><%= @robot.state %></p>
+	<img src="
+	https://robohash.org/<%= @robot.avatar %>" >
+	<p><%= @robot.birthdate %></p>
+	<p><%= @robot.date_hired %></p>
+	<p><%= @robot.department %></p>
+</section>

@@ -1,11 +1,46 @@
-<form action="/robots" method="post">
-  <p>Enter a new Robot:</p>
-  <label>Robot Name <input type='text' name='robot[name]'/></label><br/>
-  <label>City <input type='text' name='robot[city]'/></label><br/>
-  <label>State <input type='text' name='robot[state]'/></label><br/>
-  <label>Avatar <input type='text' name='robot[avatar]'/></label><br/>
-  <label>Birthdate <input id="birthdate" type='text' placeholder="mm/dd/yyyy" name='robot[birthdate]'/></label><br/>
-  <label>Date Hired <input id="date_hired" type='text' placeholder="mm/dd/yyyy" name='robot[date_hired]'/></label><br/>
-  <label>Department <input type='text' name='robot[department]'/></label><br/>
-  <input type='submit'/>
-</form>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+	<form action="/robots" method="post">
+	<p>Enter a new Robot:</p>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+    <input class="mdl-textfield__input" type="text" name='robot[name]' />
+    <label class="mdl-textfield__label">Robot Name...</label>
+  </div>
+	<!-- <label>Robot Name <input type='text' name='robot[name]'/></label><br/> -->
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+    <input class="mdl-textfield__input" type="text" name='robot[city]' />
+    <label class="mdl-textfield__label">City...</label>
+  </div>
+	<!-- <label>City <input type='text' name='robot[city]'/></label><br/> -->
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+    <input class="mdl-textfield__input" type="text" name='robot[state]' />
+    <label class="mdl-textfield__label">State...</label>
+  </div>
+<!-- 	<label>State <input type='text' name='robot[state]'/></label><br/>
+ -->	
+ <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+    <input class="mdl-textfield__input" type="text" name='robot[avatar]' />
+    <label class="mdl-textfield__label">Avatar...</label>
+  </div>
+  <!-- </div><label>Avatar <input type='text' name='robot[avatar]'/></label><br/> -->
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+    <input class="mdl-textfield__input" type="text" name='robot[birthdate]' />
+    <label class="mdl-textfield__label">Birthdate mm/dd/yyyy...</label>
+  </div>
+	<!-- <label>Birthdate <input id="birthdate" type='text' placeholder="mm/dd/yyyy" name='robot[birthdate]'/></label><br/> -->
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+    <input class="mdl-textfield__input" type="text" name='robot[date_hired]' />
+    <label class="mdl-textfield__label">Date Hired mm/dd/yyyy...</label>
+  </div>
+<!--   <label>Date Hired <input id="date_hired" type='text' placeholder="mm/dd/yyyy" name='robot[date_hired]'/></label><br/> -->
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+    <input class="mdl-textfield__input" type="text" name='robot[department]' />
+    <label class="mdl-textfield__label">Department...</label>
+  </div>
+<!-- 	<label>Department <input type='text' name='robot[department]'/></label><br/> -->
+<button type='submit' class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+  Submit
+</button>
+	
+	</form>
+
+</section>

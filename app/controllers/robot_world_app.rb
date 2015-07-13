@@ -5,11 +5,11 @@ class RobotWorldApp < Sinatra::Base
 	set :method_override, true
 
 	get '/' do
-		@average_robot_age = RobotWorld.average_robot_age
-		@robots_hired_per_year = RobotWorld.robots_hired_per_year
-		@robots_per_department = RobotWorld.robots_per_department
-		@robots_per_city = RobotWorld.robots_per_city
-		@robots_per_state = RobotWorld.robots_per_state
+		# @average_robot_age = RobotWorld.average_robot_age
+		# @robots_hired_per_year = RobotWorld.robots_hired_per_year
+		# @robots_per_department = RobotWorld.robots_per_department
+		# @robots_per_city = RobotWorld.robots_per_city
+		# @robots_per_state = RobotWorld.robots_per_state
 		erb :dashboard
 	end
 

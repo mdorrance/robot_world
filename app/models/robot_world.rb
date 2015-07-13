@@ -1,4 +1,4 @@
-require 'yaml/store'
+# require 'yaml/store'
 require 'date'
 require 'bigdecimal'
 
@@ -7,9 +7,9 @@ require_relative 'robot'
 class RobotWorld
 	def self.database
 		if ENV["ROBOT_WORLD_ENV"] == 'test'
-			@database ||= YAML::Store.new("db/robot_world_test")
+			@database ||= Sequel.sqlite("db/robot_world_test.sqlite3")
 		else
-			@database ||= YAML::Store.new("db/robot_world")
+			@database ||= Sequel.sqlite("db/robot_world_development.sqlite3")
 		end
 	end
 
@@ -70,11 +70,15 @@ class RobotWorld
   def self.average_robot_age
     count = 0
     database.transaction do
-      ages = database['robots'].map do |robot|
-        count += 1
-        ((Date.today - Date.strptime(robot["birthdate"],'%m/%d/%Y')).to_i) / 365.0
-      end
-      (ages.reduce(:+) / count).round(2)
+    	if database['robots'] == []
+    		'None'
+	    	else
+	      ages = database['robots'].map do |robot|
+	        count += 1
+	        ((Date.today - Date.strptime(robot["birthdate"],'%m/%d/%Y')).to_i) / 365.0
+	      end
+	      (ages.reduce(0, :+) / count).round(2)
+    	end
     end
   end
 

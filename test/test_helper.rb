@@ -12,6 +12,7 @@ class Minitest::Test
 end
 
 Capybara.app = RobotWorldApp
+Capybara.save_and_open_page_path = "/tmp"
 
 class FeatureTest < Minitest::Test
 	include Capybara::DSL
