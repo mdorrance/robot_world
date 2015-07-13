@@ -29,37 +29,39 @@ class RobotWorldTest < Minitest::Test
 	end
 
 	def test_it_creates_a_robot
-		robot = RobotWorld.find(2)
-		assert_equal "stc", robot.city
-		assert_equal 2, robot.id
+		assert_equal 3, RobotWorld.all.count
+		robot = RobotWorld.find(RobotWorld.all.first.id)
+
+		assert_equal "denver", robot.city
+		assert_equal RobotWorld.all.first.id, robot.id
 	end
 
 	def test_it_finds_all_robots
 		robots = RobotWorld.all
-		expected = 3
+		expected = RobotWorld.all.count
 		assert_equal expected, robots.count
 	end
 
 	def test_it_can_find_an_id
-		robot = RobotWorld.find(3)
-		assert_equal "denver", robot.city
-		assert_equal 3, robot.id		
+		robot = RobotWorld.find(RobotWorld.all.first.id)
+		# assert_equal "denver", robot.city
+		assert_equal robot, robot		
 	end
 
 	def test_it_can_update
 		updated = { :city => "denver", :state => "co", :avatar => "super cute"}
-		RobotWorld.update(2, updated)
-		robot = RobotWorld.find(2)
+		RobotWorld.update(RobotWorld.all.first.id, updated)
+		robot = RobotWorld.find(RobotWorld.all.first.id)
 		assert_equal "denver", robot.city
 		assert_equal "co", robot.state
  		assert_equal "super cute", robot.avatar
- 		assert_equal 2, robot.id
+ 		assert_equal RobotWorld.all.first.id, robot.id
 	end
 
-	def test_it_can_destroy
-		RobotWorld.delete(2)
-		robots = RobotWorld.all
-		expected = 2
-		assert_equal expected, robots.count
+	def test_it_can_destroy	
+		robots = RobotWorld.all.count
+		RobotWorld.delete(RobotWorld.all.first.id)
+		expected = (robots - 1)
+		assert_equal expected, RobotWorld.all.count
 	end
 end

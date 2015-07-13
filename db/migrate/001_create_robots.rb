@@ -9,6 +9,7 @@ environments.each do |environment|
 		primary_key :id
 		String			:name
 		String  		:city
+		String      :state
 		String  		:avatar
 		String  		:birthdate
 		String  		:date_hired
